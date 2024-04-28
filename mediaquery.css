@@ -1,0 +1,10 @@
+@media screen and (max-width: 1200px) {
+  #toc-navigation {
+    display:none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+}
+
+
