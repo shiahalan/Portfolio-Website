@@ -54,7 +54,7 @@ const observer = new IntersectionObserver(entries => {
       } else if (event.target.tagName.toLowerCase() == "a") {
         i += 1/5;
       } else if (event.target.classList.contains("long-paragraph")) {
-        i += 3;
+        i += 2;
       } else if (event.target.tagName.toLowerCase() == "p") {
         i += 1/4;
       } else if (event.target.tagName.toLowerCase() == "button") {
