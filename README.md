@@ -3,7 +3,7 @@ Hey!<br><br>
 
 Welcome to my portfolio website! <br>This website was built from scratch (using HTML, CSS, and JS) to showcase my skills, experience, and projects as a Software Programmer and Cybersecurity Enthusiast. I also listed some ways you can contact me incase you want to get in touch! <br>
 Whether you're a potential employer, colleague, or just curious about what I do, I openly invite you to browse through my portfolio.
-
+<br>
 Click Here: https://alanshiah.com
 <br><br><br>
 ## Technologies Used
