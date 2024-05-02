@@ -6,11 +6,11 @@ Whether you're a potential employer, colleague, or just curious about what I do,
 
 
 <br><br><br>
-### Technologies Used
+## Technologies Used
 #### HTML <br>
 #### CSS <br>
 #### JavaScript <br>
 
 <br><br><br>
-### Feedback and Support
+## Feedback and Support
 If you have any feedback, questions, or suggestions for improvement, feel free to reach out to me using the contact information listed on my website. I welcome all constructive criticism and advice to enhance my portfolio and further expand my knowledge. Your input is greatly appreciated, as it will help me refine my work and grow as a professional.
