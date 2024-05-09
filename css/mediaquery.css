@@ -1,3 +1,6 @@
+/* ADD media query to say THIS SHOULD BE VIEWED ON COMPUTER DESKTOP */
+
+
 @media screen and (max-width: 1400px) {
   #profile {
     height: 83vh;
