@@ -24,10 +24,19 @@ headings.forEach(heading => {
 
 // Observer to observe what elements client can see, when element can be seen then play animation
 // Animation for encryption unscrambling effect
+
+// Note: Add the exclude-animation class to an element to prevent elements inside of it from being deleted. The animation
+// deletes the inner tag, so add the exclude-animation class to the outer tag, so the inner tag is animated and the
+// outer tag is left alone
 const codeSymbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(event => {
+
+    if (event.target.classList.contains("exclude-animation")) {
+      return;
+    }
+
     let i = 0;
   
     const repetitions = setInterval(x => {
@@ -47,9 +56,7 @@ const observer = new IntersectionObserver(entries => {
         clearInterval(repetitions);
       }
       
-      if (event.target.classList.contains("exclude-animation")) {
-        i = event.target.innerText.length
-      } else if (event.target.tagName.toLowerCase() == "h1" || event.target.tagName.toLowerCase() == "h2") {
+      if (event.target.tagName.toLowerCase() == "h1" || event.target.tagName.toLowerCase() == "h2") {
         i += 1/5;
       } else if (event.target.tagName.toLowerCase() == "a") {
         i += 1/5;

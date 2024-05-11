@@ -56,7 +56,9 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Alan Shiah</h1>
-        <p class="section__text__p2">Software Programmer and Cybersecurity Enthusiast</p>
+        <br><br>
+        <p class="section__text__p2">Software Programmer</p>
+        <p class="section__text__p2">Cybersecurity Enthusiast</p>
         <div class="btn-container">
           <button class="btn btn-color-2" onclick="window.open('./assets/testResume.pdf')">
             Download Resume
@@ -195,15 +197,15 @@
       <img src="./assets/downarrow.jpg" alt="Arrow Button Icon" class="icon arrow" onclick="location.href='./#projects'"/>
     </section>
     <section id="projects">
-      <p class="section__text__p1">Browse my Recent</p>
+      <p class="section__text__p1">Browse My</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
-              <img src="./assets/conwaygameoflife.png" alt="Project One" class="project-img"/>
+              <img src="./assets/conwaygameoflife.png" alt="Conway's Game of Life" class="project-img"/>
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
+            <h2 class="experience-sub-title project-title exclude-animation">Conway's Game of Life</h2>
             <div class="btn-container">
               <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/Conways-Game-of-Life'">
                 GitHub
@@ -215,28 +217,42 @@
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <img src="./assets/conwaygameoflife.png" alt="Project One" class="project-img"/>
+              <img src="./assets/kbb.png" alt="Project One" class="project-img"/>
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
+            <h2 class="experience-sub-title project-title exclude-animation">Terminal-Based Kelly Blue Book</h2>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/Conways-Game-of-Life'">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/Terminal-Kelley-Blue-Book'">
                 GitHub
               </button>
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/Conways-Game-of-Life'">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/Terminal-Kelley-Blue-Book'">
                 Live Demo
               </button>
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <img src="./assets/conwaygameoflife.png" alt="Project One" class="project-img"/>
+              <img src="./assets/sudoku_solver.png" alt="Project One" class="project-img"/>
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
+            <h2 class="experience-sub-title project-title exclude-animation">Sudoku Solver</h2>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/Conways-Game-of-Life'">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/sudoku-solver'">
                 GitHub
               </button>
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/Conways-Game-of-Life'">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/sudoku-solver'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/to_do_list.png" alt="Project One" class="project-img"/>
+            </div>
+            <h2 class="experience-sub-title project-title exclude-animation">To-Do List</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/To-Do-List'">
+                GitHub
+              </button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/shiahalan/To-Do-List'">
                 Live Demo
               </button>
             </div>
@@ -251,11 +267,12 @@
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img src="./assets/mailfavicon.png" alt="Email favicon" class="icon contact-icon email-icon"/>
-          <p><a href="mailto:example@gmail.com">example@gmail.com</a></p>
+          <!-- Add exclude-animation class so the observe event only activates on the a, instead of the p tag. Fixing the issue of deleting the a tag, which broke the button -->
+          <p class="exclude-animation"><a href="mailto:example@gmail.com">example@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img src="./assets/mailfavicon.png" alt="Linkedin favicon" class="icon contact-icon"/>
-          <p><a href="https://www.linkedin.com/in/alan-shiah-935180225/">LinkedIn</a></p>
+          <p class="exclude-animation"><a href="https://www.linkedin.com/in/alan-shiah-935180225/">LinkedIn</a></p>
         </div>
       </div>
     </section>
