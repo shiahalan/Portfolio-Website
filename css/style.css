@@ -318,7 +318,6 @@ section {
 
 .about-containers, .about-details-container {
   display: flex;
-  
 }
 
 
@@ -352,6 +351,11 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
+}
+
+.long-paragraph {
+  font-size: larger;
+  margin: auto 15rem;
 }
 
 /* Experience Section */
