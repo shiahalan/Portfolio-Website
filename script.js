@@ -13,7 +13,12 @@ function toggleMenu() {
 
 // QUALITY OF LIFE!!!
 // Change all class, id, tag, etc data-value to respective content for convenience
-let headings = document.querySelectorAll("h1, h2, p, a");
+// Restrict scramble to #profile only
+const SCRAMBLE_ROOT = document.querySelector('#profile');
+let headings = SCRAMBLE_ROOT
+  ? SCRAMBLE_ROOT.querySelectorAll("h1, h2, p, a")
+  : document.querySelectorAll("h1, h2, p, a");
+
 headings.forEach(heading => {
   heading.setAttribute("data-value", heading.textContent);
 });
@@ -73,7 +78,10 @@ const observer = new IntersectionObserver(entries => {
 });
 
 // Constantly observe all elements with respective id, classes, etc
-const hiddenElements = document.querySelectorAll("h1, h2, p, a");
+const hiddenElements = SCRAMBLE_ROOT
+  ? SCRAMBLE_ROOT.querySelectorAll("h1, h2, p, a")
+  : document.querySelectorAll("h1, h2, p, a");
+
 hiddenElements.forEach(ele => {
   observer.observe(ele);
 })
