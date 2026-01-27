@@ -28,18 +28,19 @@
     <canvas id="canvas-one"></canvas>
 
     <nav id="toc-navigation">  <!-- Table of Contents -->
-      <div class="logo">Alan Shiah</div>
+      <a href="#profile" style="text-decoration: none;"><div class="logo">AS</div></a>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact-info">Contact Information</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact-info">Contact</a></li>
         </ul>
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo">Alan Shiah</div>
+      <a href="#profile" style="text-decoration: none;"><div class="logo">AS</div></a>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -48,9 +49,10 @@
         </div>
         <div class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact-info" onclick="toggleMenu()">Contact Information</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#hobbies" onclick="toggleMenu()">Hobbies</a></li>
+          <li><a href="#contact-info" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
@@ -70,77 +72,48 @@
       </div>
     </section>
     <section id="about">
-      <p class="section__text__p1">Get to Know Me Better</p>
-      <h1 class="title">About Me</h1>
+      <h1 class="section-title">About</h1>
       <div class="section-container">
          <div class="about-details-container">
-           <div class="about-containers">
-             <div class="details-container">
-               <img src="./assets/experience_favicon.png" alt="Experience Icon" class="icon"/>
-               <h1>Experience</h1>
-               <h2>4+ years</h2>
-               <h2><br>Software Engineering</h2>
-             </div>
-             <div class="details-container">
-               <img src="./assets/education_favicon.png" alt="Education Icon" class="icon"/>
-               <h1>Education</h1>
-               <h2>Computer Engineering, B.S.</h2>
-               <h2><br>UC Irvine</h2>
-             </div>
-           </div>
            <div class="text-container">
              <br>
              <br>
-             <p class="long-paragraph exclude-animation"><b>Hi! I'm a Computer Engineering student at UC Irvine with experience in software development through a previous internship at NeuroLeap Corp and multiple personal / academic projects.</p>
-             <br>
-             <br>
-             <p class="long-paragraph exclude-animation"><b>Technical Skills</b>: C++, Python, Java, Go, Docker, SQL, Git, Linux, and more</p>
-             <br>
-             <br>
-             <p class="long-paragraph exclude-animation">Some examples of my work can be found on:</p>
-             <br>
-             <p class="long-paragraph exclude-animation">• Personal Portfolio Website: https://alanshiah.com</p>
-             <p class="long-paragraph exclude-animation">• GitHub Repository: https://github.com/shiahalan</p>
-             <p class="long-paragraph exclude-animation">• DEV Blog: https://dev.to/shiahalan</p>
-             <br>
-             <br>
-             <p class="long-paragraph exclude-animation">Outside of software engineering, I am very passionate about cybersecurity. I also enjoy practicing Kendo, a traditional Japanese martial art.</p>
-             <br>
-             <br>
-             <p class="long-paragraph exclude-animation">I get excited about opportunities where I'm able to innovate cutting-edge technology that will have a real <b>positive impact on society</b>.</p>
-             <br>
-             <br>
-             <p class="long-paragraph exclude-animation">I love connecting with new people, shoot me an email at alan@alanshiah.com or through my LinkedIn profile!</p>
+             <p class="long-paragraph exclude-animation">Hi, I'm Alan! I'm a B.S. computer engineering student at UC Irvine. I've previously interned at NeuroLeap and gained hands-on experience through contracts, personal projects, and club work. My experiences focused on firmware, AI, app development, and full-stack engineering. I also have a strong interest in cybersecurity.</p>
            </div>
          </div>
-         <img src="./assets/downarrow.png" alt="Arrow Button Icon" class="icon arrow" onclick="location.href='./#experience'"/>
-       </div>
      </section>
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Software Engineering Intern</h2>
-            <div class="article-container">
-              <article>
-                <div>
-                      <h2>NeuroLeap Corp</h2>
-    <p><br></br>Developed software enabling communication between microcontrollers and proprietary hardware. Focused on embedded systems, real-time control, and testing/debugging software modules.</p>
-    <p><br>Technologies used: C++, I²C, Git</br></p>
-                </div>
-              </article>
-            </div>
+      <h1 class="section-title">Experience</h1>
+      <div class="experience-trail">
+        <svg class="experience-paths" id="experience-svg"></svg>
+        <div class="experience-item">
+          <div class="experience-dot"></div>
+          <div class="experience-content">
+            <h3 class="experience-role">Software Engineering Intern</h3>
+            <p class="experience-company">NeuroLeap Corp <span class="experience-year">2024</span></p>
+            <p class="experience-description">Developed software enabling communication between microcontrollers and proprietary hardware, focusing on embedded systems.</p>
           </div>
         </div>
-        
+        <div class="experience-item">
+          <div class="experience-dot"></div>
+          <div class="experience-content">
+            <h3 class="experience-role">Software Engineer (Contracted)</h3>
+            <p class="experience-company">Stealth Startup <span class="experience-year">2025</span></p>
+            <p class="experience-description">Built a CNN-based deep learning model to identify X in Y, and compared its performance against a baseline Random Forest model.</p>
+          </div>
+        </div>
+        <div class="experience-item">
+          <div class="experience-dot"></div>
+          <div class="experience-content">
+            <h3 class="experience-role">Team Member</h3>
+            <p class="experience-company">UCI Rocket Project - Solids <span class="experience-year">2025 - Present</span></p>
+            <p class="experience-description">Contributed software and hardware tools to the UCI Rocket Project - Solids rocketry team.</p>
+          </div>
+        </div>
       </div>
-      <img src="./assets/downarrow.png" alt="Arrow Button Icon" class="icon arrow" onclick="location.href='./#projects'"/>
     </section>
     <section id="projects">
-      <p class="section__text__p1">Browse My</p>
-      <h1 class="title">Projects</h1>
+      <h1 class="section-title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
@@ -201,15 +174,21 @@
           </div>
         </div>
       </div>
-      <img src="./assets/downarrow.png" alt="Arrow Button Icon" class="icon arrow" onclick="location.href='./#contact-info'"/>
+    </section>
+    <section id="hobbies">
+      <h1 class="section-title">Hobbies</h1>
+      <div class="section-container">
+        <div class="about-details-container">
+          <div class="text-container">
+          </div>
+        </div>
+      </div>
     </section>
     <section id="contact-info">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
+        <h1 class="section-title">Contact</h1>
         <div class="contact-info-container">
           <img src="./assets/mailfavicon.png" alt="Email favicon" class="icon contact-icon email-icon"/>
-          <!-- Add exclude-animation class so the observe event only activates on the a, instead of the p tag. Fixing the issue of deleting the a tag, which broke the button -->
           <p class="exclude-animation"><a href="mailto:alan@alanshiah.com">alan@alanshiah.com</a></p>
         </div>
         <div class="contact-info-container">
@@ -218,19 +197,6 @@
         </div>
       </div>
     </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact-info">Contact Information</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p class="exclude-animation">Copyright &#169; 2024 Alan Shiah. All Rights Reserved.</p>
-    </footer>
     <script defer src="script.js"></script>
   </body>
 </html>
