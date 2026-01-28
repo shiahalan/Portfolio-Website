@@ -8,6 +8,157 @@ function toggleMenu() {
   icon.classList.toggle("open")
 }
 
+// PHOTO GALLERY LOADER!!!
+
+// List of photos to load
+const photos = [
+  "20231104_144617_capture(0).jpg",
+  "20231108_154908.jpg",
+  "20240611_203705 (1).jpg",
+  "20240704_182533.jpg",
+  "bonfire2024part3.jpg",
+  "PXL_20250913_134431936.jpg",
+  "PXL_20250913_171021031.jpg",
+  "PXL_20251106_111434236.LONG_EXPOSURE-01.COVER.jpg",
+  "PXL_20251107_202439364.MP.jpg",
+  "PXL_20251121_225448045.jpg",
+  "PXL_20251121_225616123.MP.jpg",
+  "PXL_20251122_194937942.jpg",
+  "Rocket Group-11.jpg",
+  "tmp_d6a1be55-3f9e-4fdd-bf9b-69d1cb725195 (1).png",
+  "yuhihai2025part1.jpg",
+  "yuhihai2025part3.jpg"
+];
+
+// Load photos into gallery
+const gallery = document.getElementById("photo-gallery");
+if (gallery) {
+  photos.forEach((photo, index) => {
+    const img = document.createElement("img");
+    img.src = `./assets/photos/${photo}`;
+    img.alt = `Photo ${index + 1}`;
+    img.className = "gallery-img";
+    gallery.appendChild(img);
+  });
+}
+
+// IMAGE MODAL FUNCTIONALITY!!!
+
+// Get modal elements
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+
+// Store original position and size for closing animation
+let originalImg = null;
+let originalRect = null;
+let isClosing = false;
+
+// Add click event to all gallery images
+document.querySelectorAll(".gallery-img").forEach(img => {
+  img.addEventListener("click", function(e) {
+    isClosing = false;
+    originalImg = this;
+    const rect = this.getBoundingClientRect();
+    
+    // Calculate center position of the original image
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    // Store original rect for closing animation
+    originalRect = { centerX, centerY, width: rect.width, height: rect.height };
+    
+    // Set position and hide initially
+    modalImg.src = this.src;
+    modalImg.style.position = "fixed";
+    modalImg.style.left = centerX + "px";
+    modalImg.style.top = centerY + "px";
+    modalImg.style.transition = "none";
+    modalImg.style.opacity = "0";
+    modalImg.style.transform = "translate(-50%, -50%) scale(1)";
+    
+    // Show modal container
+    modal.style.display = "block";
+    
+    // After image loads, calculate correct starting scale
+    const loadHandler = function() {
+      const enlargedWidth = modalImg.offsetWidth;
+      const startScale = rect.width / enlargedWidth;
+      
+      // Set to start scale without transition
+      modalImg.style.transform = `translate(-50%, -50%) scale(${startScale})`;
+      modalImg.style.opacity = "1";
+      
+      // Enable transition and animate
+      setTimeout(() => {
+        modalImg.style.transition = "transform 0.6s ease";
+        modalImg.style.transform = "translate(-50%, -50%) scale(1)";
+      }, 10);
+    };
+    
+    // Handle both cached and uncached images
+    if (modalImg.complete) {
+      loadHandler();
+    } else {
+      modalImg.onload = loadHandler;
+    }
+  });
+});
+
+// Function to close modal with shrink animation
+function closeModalWithAnimation() {
+  if (isClosing) return;
+  
+  if (originalRect && originalImg) {
+    isClosing = true;
+    
+    // Get updated position of original image
+    const currentRect = originalImg.getBoundingClientRect();
+    const currentCenterX = currentRect.left + currentRect.width / 2;
+    const currentCenterY = currentRect.top + currentRect.height / 2;
+    
+    // Calculate scale to return to original thumbnail size
+    const enlargedWidth = modalImg.offsetWidth;
+    const scaleRatio = originalRect.width / enlargedWidth;
+    
+    modalImg.style.transition = "transform 0.6s ease";
+    modalImg.style.transform = `translate(-50%, -50%) scale(${scaleRatio})`;
+    modalImg.style.left = currentCenterX + "px";
+    modalImg.style.top = currentCenterY + "px";
+    
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+      modal.style.display = "none";
+      isClosing = false;
+    }, 600);
+  } else {
+    modal.style.display = "none";
+  }
+}
+
+// Close modal when clicking outside the image
+modal.addEventListener("click", function(e) {
+  if (e.target === modal) {
+    closeModalWithAnimation();
+  }
+});
+
+// Close modal when scrolling
+window.addEventListener("scroll", function() {
+  if (modal.style.display === "block") {
+    if (!isClosing) {
+      closeModalWithAnimation();
+    } else if (originalImg) {
+      // While closing, update position to follow the original image
+      const currentRect = originalImg.getBoundingClientRect();
+      const currentCenterX = currentRect.left + currentRect.width / 2;
+      const currentCenterY = currentRect.top + currentRect.height / 2;
+      
+      modalImg.style.left = currentCenterX + "px";
+      modalImg.style.top = currentCenterY + "px";
+    }
+  }
+});
+
 
 
 
