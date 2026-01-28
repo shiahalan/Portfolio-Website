@@ -701,7 +701,7 @@ a:hover::after {
 }
 
 .contact-info-container p {
-  font-size: larger;
+  font-size: 1.25rem;
 }
 
 .contact-icon {
