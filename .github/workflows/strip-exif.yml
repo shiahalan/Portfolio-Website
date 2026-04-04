@@ -1,0 +1,23 @@
+name: Strip EXIF Data
+
+on: [push]
+
+jobs:
+  strip-exif:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install exiftool
+        run: sudo apt-get install -y libimage-exiftool-perl
+
+      - name: Strip EXIF from all images
+        run: exiftool -all= -overwrite_original -r .
+
+      - name: Commit cleaned images
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Auto: strip EXIF metadata"
+          git push
